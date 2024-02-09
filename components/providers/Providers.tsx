@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import AuthKitProvider from './AuthKitProvider';
 import ThemeProvider from './ThemeProvider';
+import SmoothScrollProvider from './SmoothScrollProvider';
 
 type ProvidersProps = {
   children: ReactNode;
@@ -14,7 +15,9 @@ export default function Providers({ children }: ProvidersProps) {
       enableSystem
       disableTransitionOnChange
     >
-      <AuthKitProvider>{children}</AuthKitProvider>
+      <SmoothScrollProvider>
+        <AuthKitProvider>{children}</AuthKitProvider>
+      </SmoothScrollProvider>
     </ThemeProvider>
   );
 }

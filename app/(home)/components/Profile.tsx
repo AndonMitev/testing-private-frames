@@ -10,12 +10,12 @@ export default function Profile() {
   } = useProfile();
 
   const labelText = isAuthenticated
-    ? `Hello, ${username}! Your fid is: {fid}`
+    ? `Hello, ${username}! Your fid is: ${fid}`
     : `You're not signed in.`;
 
   return (
     <div>
-      <Label>{labelText}</Label>
+      <Label className='text-white'>{labelText}</Label>
     </div>
   );
 }
