@@ -50,9 +50,11 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <Providers>
-          <Header />
-          {children}
-          <Footer />
+          <main className='h-dvh grid grid-rows-[auto_1fr_auto]'>
+            <Header />
+            <div>{children}</div>
+            <Footer />
+          </main>
         </Providers>
       </body>
     </html>

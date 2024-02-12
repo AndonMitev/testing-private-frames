@@ -2,12 +2,13 @@ import { ReactNode } from 'react';
 import AuthKitProvider from './AuthKitProvider';
 import ThemeProvider from './ThemeProvider';
 import SmoothScrollProvider from './SmoothScrollProvider';
+import ReactQueryProvider from './ReactQueryProvider';
 
 type ProvidersProps = {
   children: ReactNode;
 };
 
-export default function Providers({ children }: ProvidersProps) {
+export default async function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       attribute='class'
@@ -16,7 +17,9 @@ export default function Providers({ children }: ProvidersProps) {
       disableTransitionOnChange
     >
       <SmoothScrollProvider>
-        <AuthKitProvider>{children}</AuthKitProvider>
+        <ReactQueryProvider>
+          <AuthKitProvider>{children}</AuthKitProvider>
+        </ReactQueryProvider>
       </SmoothScrollProvider>
     </ThemeProvider>
   );

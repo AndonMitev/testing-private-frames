@@ -4,11 +4,11 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     remotePatterns: [{ protocol: 'https', hostname: '**' }]
   },
-  logging: {
-    fetches: {
-      fullUrl: true
-    }
-  }
+  // logging: {
+  //   fetches: {
+  //     fullUrl: true
+  //   }
+  // }
 };
 
 export default nextConfig;

@@ -8,6 +8,5 @@ export async function fetchFramesFeedAction(
   limit = 10
 ): Promise<Optional<Frame>[]> {
   const response = await neynarClient.fetchFramesOnlyFeed({ limit });
-
   return response.casts.map((cast) => cast.frames).flat();
 }

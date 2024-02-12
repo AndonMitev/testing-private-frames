@@ -12,6 +12,7 @@ import { env } from '@/lib/config/env';
  */
 
 const config = {
+  relay: 'https://relay.farcaster.xyz',
   rpcUrl: 'https://mainnet.optimism.io',
   domain: env.NEXT_PUBLIC_APP_DOMAIN,
   siweUri: env.NEXT_PUBLIC_APP_BASE_URL
@@ -22,5 +23,5 @@ type AuthKitProviderProps = {
 };
 
 export default function AuthKitProvider({ children }: AuthKitProviderProps) {
-  return <NextAuthKitProvider>{children}</NextAuthKitProvider>;
+  return <NextAuthKitProvider config={config}>{children}</NextAuthKitProvider>;
 }
